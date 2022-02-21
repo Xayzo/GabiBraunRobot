@@ -37,7 +37,7 @@ def afk(update, context):
     fname = update.effective_user.first_name
     try:
         update.effective_message.reply_text(
-            "{} is now Away!".format(fname))
+            "See you again {} 👋🏻!".format(fname))
     except BadRequest:
         pass
 
@@ -121,12 +121,12 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if reason == "none":
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is AFK!\nSince: {}".format(fst_name, since_afk)
+            res = "Hey friends, {} is AFK!\nSince: {}".format(fst_name, since_afk)
             update.effective_message.reply_text(res)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is AFK! Says it's because of:\n{}\nSince: {}".format(fst_name, reason, since_afk)
+            res = "Hey friends, {} is AFK! Reason:\n{}\nSince: {}".format(fst_name, reason, since_afk)
             update.effective_message.reply_text(res)
 
 
